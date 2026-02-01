@@ -47,6 +47,20 @@ I benchmarked four classification algorithms to find the optimal "Win Condition"
 * **Machine Learning:** Scikit-learn (GridSearchCV for hyperparameter tuning)
 * **Dashboard:** Plotly Dash (Frontend visualization)
 
+---
+
+## 🚀 How to Run
+
+### Prerequisite
+You must have Python 3.9+ installed.
+
+---
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/ryangilbert-github/spacex-launch-predictor.git](https://github.com/ryangilbert-github/spacex-launch-predictor.git)
+cd spacex-launch-predictor
+
 ## 📂 Repository Structure
 ```bash
 ├── datasets/           # Raw and processed .csv data
@@ -58,13 +72,3 @@ I benchmarked four classification algorithms to find the optimal "Win Condition"
 ├── spacex_dash_app.py  # Interactive Dashboard Logic
 ├── requirements.txt    # Dependencies
 └── README.md           # Documentation
-
-## 🚀 How to Run
-
-### Prerequisite
-You must have Python 3.9+ installed.
-
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/ryangilbert-github/spacex-launch-predictor.git](https://github.com/ryangilbert-github/spacex-launch-predictor.git)
-cd spacex-launch-predictor
