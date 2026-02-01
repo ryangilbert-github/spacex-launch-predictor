@@ -49,18 +49,6 @@ I benchmarked four classification algorithms to find the optimal "Win Condition"
 
 ---
 
-## 🚀 How to Run
-
-### Prerequisite
-You must have Python 3.9+ installed.
-
----
-
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/ryangilbert-github/spacex-launch-predictor.git](https://github.com/ryangilbert-github/spacex-launch-predictor.git)
-cd spacex-launch-predictor
-
 ## 📂 Repository Structure
 ```bash
 ├── datasets/           # Raw and processed .csv data
@@ -72,3 +60,29 @@ cd spacex-launch-predictor
 ├── spacex_dash_app.py  # Interactive Dashboard Logic
 ├── requirements.txt    # Dependencies
 └── README.md           # Documentation
+```
+
+---
+
+## 🚀 How to Run
+
+Prerequisite
+You must have Python 3.9+ installed.
+
+1. Clone the Repository
+Bash
+git clone [https://github.com/ryangilbert-github/spacex-launch-predictor.git](https://github.com/ryangilbert-github/spacex-launch-predictor.git)
+cd spacex-launch-predictor
+
+2. Install Dependencies
+This project uses a requirements.txt file to manage libraries.
+
+```Bash
+pip install -r requirements.txt
+3. Run the Dashboard
+To launch the interactive analytics dashboard locally:
+```
+```Bash
+python spacex_dash_app.py
+The dashboard will open in your browser at http://127.0.0.1:8050/
+```
