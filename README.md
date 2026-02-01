@@ -70,10 +70,10 @@ Prerequisite
 You must have Python 3.9+ installed.
 
 1. Clone the Repository
-Bash
+```Bash
 git clone [https://github.com/ryangilbert-github/spacex-launch-predictor.git](https://github.com/ryangilbert-github/spacex-launch-predictor.git)
 cd spacex-launch-predictor
-
+```
 2. Install Dependencies
 This project uses a requirements.txt file to manage libraries.
 
