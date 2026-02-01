@@ -79,10 +79,14 @@ This project uses a requirements.txt file to manage libraries.
 
 ```Bash
 pip install -r requirements.txt
+```
+
 3. Run the Dashboard
 To launch the interactive analytics dashboard locally:
-```
+
 ```Bash
 python spacex_dash_app.py
-The dashboard will open in your browser at http://127.0.0.1:8050/
 ```
+
+The dashboard will open in your browser at http://127.0.0.1:8050/
+
