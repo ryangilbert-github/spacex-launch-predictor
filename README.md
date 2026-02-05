@@ -67,7 +67,7 @@ I benchmarked four classification algorithms to find the optimal "Win Condition"
 │   ├── 2_Data_Wrangling.ipynb
 │   ├── 3_EDA_SQL.ipynb
 │   ├── 4_EDA_Visualization.ipynb
-│   ├── 5_EDA_Folium_Maps.ipynb
+│   ├── 5_EDA_Interactive_Maps.ipynb
 │   └── 6_Machine_Learning.ipynb
 ├── SpaceX_Technical_Slide_Deck.pptx  # Technical Presentation
 ├── spacex_dash_app.py          # Interactive Dashboard Logic
