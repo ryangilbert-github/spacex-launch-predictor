@@ -19,24 +19,34 @@ In this project, I built a pipeline to predict whether a Falcon 9 rocket would s
 ---
 
 ## 🏗️ Project Architecture
-The solution is built as a modular pipeline:
+The solution is built as a modular pipeline consisting of 6 Jupyter Notebooks and 1 Python Dashboard script:
 
-1.  **Data Mining (REST API):** Automated collection of historical launch data from the SpaceX API.
-2.  **Data Wrangling (Pandas/SQL):** Cleaning missing values (PayloadMass) and standardizing categorical features (OrbitType, LaunchSite) using One-Hot Encoding.
-3.  **Exploratory Data Analysis (EDA):** Visualizing correlation matrices to identify failure points (e.g., specific orbits had a 0% success rate with high payloads).
-4.  **Predictive Modeling:** Training and validating 4 supervised learning models.
+### 1. Data Collection & Wrangling
+* **`1_Data_Collection_API.ipynb`**: Automated data extraction from the SpaceX API to build the raw dataset.
+* **`2_Data_Wrangling.ipynb`**: Data cleaning (handling missing PayloadMass) and Feature Engineering (One-Hot Encoding for Orbit/Launch Site).
+
+### 2. Exploratory Data Analysis (EDA)
+* **`3_EDA_SQL.ipynb`**: Querying the database to find standard success rates and payload ranges using SQL.
+* **`4_EDA_Visualization.ipynb`**: Visualizing trends and correlations using Matplotlib & Seaborn.
+* **`5_EDA_Folium_Maps.ipynb`**: Geospatial analysis of launch sites to identify "safe zones" and cluster densities.
+
+### 3. Predictive Analysis
+* **`6_Machine_Learning.ipynb`**: Training and hyperparameter tuning of 4 classification models (Logistic Regression, SVM, Decision Tree, KNN) to predict landing success.
+
+### 4. Interactive Dashboard
+* **`7_spacex_dash_app.py`**: A real-time `Plotly Dash` application allowing users to filter launch data by site and payload mass.
 
 ---
 
 ## 📊 Model Performance
-I benchmarked four classification algorithms to find the optimal "Win Condition" predictor:
+I benchmarked four classification algorithms to find the optimal "Win Condition" predictor. The **Support Vector Machine (SVM)** achieved perfect accuracy on the test set.
 
-| Model | Accuracy | F1 Score | Notes |
-| :--- | :--- | :--- | :--- |
-| **Decision Tree** | **98%** | **0.88** | Best performance on test data. |
-| K-Nearest Neighbors | 83% | 0.81 | Good baseline, but computationally expensive at scale. |
-| Support Vector Machine (SVM) | 83% | 0.81 | Effective but required significant hyperparameter tuning. |
-| Logistic Regression | 82% | 0.80 | - |
+| Model | Accuracy | Notes |
+| :--- | :--- | :--- |
+| **Support Vector Machine (SVM)** | **100.00%** | **Best performance.** Perfect classification on test data. |
+| Logistic Regression | 97.22% | Very strong baseline model. |
+| Decision Tree | 94.44% | Highly interpretable, but slightly prone to overfitting. |
+| K-Nearest Neighbors (KNN) | 91.67% | Good performance but computationally expensive at scale. |
 
 ---
 
@@ -51,44 +61,39 @@ I benchmarked four classification algorithms to find the optimal "Win Condition"
 
 ## 📂 Repository Structure
 ```bash
-├── datasets/           # Raw and processed .csv data
-├── notebooks/          # Jupyter Notebooks for EDA and Model Training
+├── datasets/                   # Raw and processed .csv data
+├── notebooks/                  # Jupyter Notebooks for EDA and Model Training
 │   ├── 1_Data_Collection_API.ipynb
 │   ├── 2_Data_Wrangling.ipynb
 │   ├── 3_EDA_SQL.ipynb
-|   ├── 4_EDA_Visualization.ipynb
-|   ├── 5_Interative_Maps.ipynb
+│   ├── 4_EDA_Visualization.ipynb
+│   ├── 5_EDA_Folium_Maps.ipynb
 │   └── 6_Machine_Learning.ipynb
-├── spacex_dash_app.py  # Interactive Dashboard Logic
-├── requirements.txt    # Dependencies
-└── README.md           # Documentation
+├── SpaceX_Technical_Slide_Deck.pptx  # Technical Presentation
+├── spacex_dash_app.py          # Interactive Dashboard Logic
+├── requirements.txt            # Dependencies
+└── README.md                   # Documentation
 ```
 
----
-
 ## 🚀 How to Run
+Prerequisite You must have Python 3.9+ installed.
 
-Prerequisite
-You must have Python 3.9+ installed.
+## Clone the Repository
 
-1. Clone the Repository
 ```Bash
 git clone [https://github.com/ryangilbert-github/spacex-launch-predictor.git](https://github.com/ryangilbert-github/spacex-launch-predictor.git)
 cd spacex-launch-predictor
 ```
-2. Install Dependencies
+
+## Install Dependencies 
 This project uses a requirements.txt file to manage libraries.
 
 ```Bash
 pip install -r requirements.txt
 ```
-
-3. Run the Dashboard
-To launch the interactive analytics dashboard locally:
+Run the Dashboard To launch the interactive analytics dashboard locally:
 
 ```Bash
 python spacex_dash_app.py
 ```
-
 The dashboard will open in your browser at http://127.0.0.1:8050/
-
